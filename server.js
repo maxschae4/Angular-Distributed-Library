@@ -11,6 +11,6 @@ require('./server/config/mongoose.js');									// require our mongoose connecti
 require('./server/config/routes.js')(app);								// require our routes file in ./server/config/routes and passes app (express())
 
 
-app.listen(30000, function() {
+app.listen(80, function() {
 	console.log('listening on 30000!');
 });
