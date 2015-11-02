@@ -10,7 +10,8 @@ app.use(express.static(__dirname + '/client'));							// establish folder for st
 require('./server/config/mongoose.js');									// require our mongoose connection file (this file also links all our models!)
 require('./server/config/routes.js')(app);								// require our routes file in ./server/config/routes and passes app (express())
 
+var port = process.env.PORT || 3000;
 
-app.listen(80, function() {
-	console.log('listening on 30000!');
+app.listen(port, function() {
+	console.log('listening on '+port);
 });
