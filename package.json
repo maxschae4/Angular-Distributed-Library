@@ -1,5 +1,8 @@
 {
   "name": "distributed-library",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "angular-moment": "latest",
     "body-parser": "^1.8.4",
