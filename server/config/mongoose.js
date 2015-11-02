@@ -1,7 +1,7 @@
 mongoose = require('mongoose');
 var fs = require('fs');
 
-mongoose.connect('mongodb://maxschae4:5fddq3at@ds049104.mongolab.com:49104/dist-lib');
+mongoose.connect('mongodb://heroku_qh6w49dp:7k39n68jk216et5895nq41jka8@ds049084.mongolab.com:49084/heroku_qh6w49dp');
 
 var models_path = __dirname + '/../models';
 
