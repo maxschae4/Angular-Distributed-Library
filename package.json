@@ -1,0 +1,11 @@
+{
+  "name": "distributed-library",
+  "dependencies": {
+    "angular-moment": "latest",
+    "body-parser": "^1.8.4",
+    "express": "^4.9.8",
+    "moment": "latest",
+    "mongoose": "^4.0.4",
+    "mongoose-auto-increment": "latest"
+  }
+}

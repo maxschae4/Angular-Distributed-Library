@@ -1,0 +1,60 @@
+<!-- Nav Bar Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">Seattle Distributed Library</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#/books">My Books</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Nav Bar End -->
+<!-- 	Add a Book 		-->
+<h1 class="page-header">Add a Book to Share</h1>
+<form class="form-inline" name="bc.bookForm" ng-submit="bc.addBook(book)">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" placeholder="The Old Man and the Sea" ng-model="book.title" required>
+  </div>
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text" class="form-control" placeholder="Ernest Hemingway" ng-model="book.author" required>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="bc.bookForm.$invalid">Share Book</button>
+</form>
+<br>
+<h1 class="page-header">Library</h1>
+<label><input class="form-control" type="text" ng-model="filterText" placeholder="filter books"></label>
+<label>Quick Filters: 
+	<button type="submit" class="btn btn-default" ng-click="filterText = bc.username">My Books</button>
+  <button type="submit" class="btn btn-default" ng-click="filterText = ''">Clear filter</button>
+</label>
+<div class="table-responsive">
+  <table class="table table-condensed table-striped">
+  	<thead>
+    	<tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Status</th>
+        <th>Owner</th>
+    </tr>
+  	</thead>
+  	<tbody>
+  		<tr ng-repeat="book in bc.books | orderBy: 'title' | filter: filterText ">
+        <td class="vert-align" ng-bind="book.title"></td>
+        <td class="vert-align" ng-bind="book.author"></td>
+        <td class="vert-align" compile="book.status"></td>
+        <td class="vert-align" compile="book.owner"></td>
+	    </tr>      
+  	</tbody>
+  </table>
+</div>

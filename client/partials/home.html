@@ -1,0 +1,29 @@
+<!-- Nav Bar Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">Seattle Distributed Library</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/FindBooks">Find Books</a></li>
+        <li><a href="#/MyBooks">My Books</a></li>
+        <li ng-controller='logoutController'><a ng-click='logout()'>Logout</a></li>
+      </ul>
+      <form ng-controller="bookSearchController" class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Nav Bar End -->
+<!-- Begin Main Content -->
+<h1>Welcome <span ng-bind='user || "user"'></h1>
+<button type="button" class="btn btn-lg btn-default">My Books</button>
+<button type="button" class="btn btn-lg btn-default">Find Books</button>
